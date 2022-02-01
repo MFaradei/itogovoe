@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'dart:developer';
+//import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -35,10 +35,10 @@ class InfoUser extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Center(
-              child: FlutterLogo(
-                size: 100,
-              ),
+            Center(
+              child: Image.network(
+                  'https://randomuser.me/api/portraits/med/men/${uid.id}.jpg'),
+              //    FlutterLogo(size: 100,),
             ),
             Text('Имя: ${uid.name}'),
             Text('Логин: ${uid.username}'),
@@ -46,7 +46,7 @@ class InfoUser extends StatelessWidget {
             Text('Телефон: ${uid.phone}'),
             Text(
                 'Адрес: индэкс:${uid.zipcode} г.${uid.city}, ул. ${uid.street}, ст.${uid.suite}, '),
-            // Text('rfhnf: ${uid.lat}'),
+            // Text('координаты: ${uid.lat}'),
             Text('website: ${uid.website}'),
             Text('Место работы: ${uid.cname}'),
             Text('Лозунг компании: ${uid.catchPhrase}'),
