@@ -47,6 +47,8 @@ class _CounterState extends State<Counter> {
                       title: Text('Имя: ${snapshot.data![index].name}'),
                       subtitle: Text('Email: ${snapshot.data![index].email}'),
                       leading: Text('ID: ${snapshot.data![index].id}'),
+                      trailing: Image.network(
+                          'https://randomuser.me/api/portraits/med/men/${snapshot.data![index].id}.jpg'),
                       onTap: () async {
                         UserID uid = UserID(
                             snapshot.data![index].id,
@@ -64,7 +66,6 @@ class _CounterState extends State<Counter> {
                             '${snapshot.data![index].company!.name}',
                             '${snapshot.data![index].company!.catchPhrase}',
                             '${snapshot.data![index].company!.bs}');
-
                         Navigator.pushNamed(context, '/ infoUser',
                             arguments: uid);
                       },
